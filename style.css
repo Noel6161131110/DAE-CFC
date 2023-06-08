@@ -39,3 +39,31 @@ th, td {
 .gap30{
     margin-bottom: 30px;
 }
+footer{
+    background-color: #484747;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: 30px;
+}
+
+li{
+    list-style: none;
+}
+
+.box{
+    background-color: rgb(255, 255, 255);
+    border-radius: 30px;
+}
+
+header{
+    background-color: #484747;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: 30px;
+}

@@ -12,13 +12,16 @@
     </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 </head>
-<body>
-    <div class="center-block2 inv">
+<body class="bg-dark">
+    <header>
+        <h1 class="text-white 1">Carbon Footprint Calculator</h1>
+    </header>
+    <div class="container center-block2 box">
         <div class="gap30"></div>
-        <div class="container" style="overflow-x:auto;">
-            <table class="table table-borderless">
+        <div class="" style="overflow-x:auto; padding-top:15px;">
+            <table class="table table-borderless" >
                 <thead class="thread">
-                    <tr>
+                    <tr >
                         <th colspan="2">Total Family Members including yourself:</th>
                         <th><input name="txt_0" type="text" maxlength="10" id="txt_0" class="form-control" autocomplete="off" placeholder="" onblur="javascript:calculate_total(0);" style="text-align:right;" ></th>
                         <th></th>
@@ -108,7 +111,7 @@
         </div>
         <div class="gap30"></div>
         <div class="gap30"></div>
-        <div class="container row">
+        <div class=" row">
             <div class="col-md-12 total vertical-center">
                 <div class="col-md-7">
                     <div class="col-md-12 fp-total-annual-text">Your total annual emissions</div>
@@ -131,13 +134,22 @@
                 <div class="col-md-5 fp-total-average-value"><span>18.68 </span>tonnes of CO<sub>2</sub></div>
             </div>
             <div class="gap30"></div>
-            <div class="container"> 
+            <div class=""> 
                 <p>To reduce your environmental impact Start with these <a href="https://www.un.org/en/actnow/ten-actions">Ten Actions</a> !. </p>
                 <p>Want To Offset your Emissions? Thats Amazing! <br> Head to <a href="https://offset.climateneutralnow.org/howtooffset">The UN Carbon Offset Platform</a> to find out more on how.</p>
             </div>
         </div>
     </div>
-    
+    <footer class="">
+        <div class="container items">
+          <p>&copy; 2023 Viraj Prabhu. All rights reserved.</p>
+          <!--ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul-->
+        </div>
+      </footer>
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
