@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Carbon Footprint Calculator</title>
+    <link rel="icon" href="images/download2.ico" >
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+</head>
+<body>
+    <div class="center-block2 inv">
+        <div class="gap30"></div>
+        <div class="container" style="overflow-x:auto;">
+            <table class="table table-borderless">
+                <thead class="thread">
+                    <tr>
+                        <th colspan="2">Total Family Members including yourself:</th>
+                        <th><input name="txt_0" type="text" maxlength="10" id="txt_0" class="form-control" autocomplete="off" placeholder="" onblur="javascript:calculate_total(0);" style="text-align:right;" ></th>
+                        <th></th>
+                    </tr>
+                        <tr>
+                            <th style="width:20%;">Activity / Fuel Use (per month)</th>
+                            <th style="width:20%;">Quantity</th>
+                            <th style="width:20%;">CO2 (kg)</th>
+                            <th>Notes</th>
+                        </tr>
+                </thead>
+                <tbody> 
+                    <tr>
+                        <td colspan="4" style="text-align:left;"><strong>Transportation</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Petrol (litres)</td>
+                        <td><input name="txt_1" type="text" maxlength="5" id="txt_1" class="form-control" autocomplete="off" placeholder="" onblur="javascript:calculate_total(1);" style="text-align:right;"></td>
+                        <td><input name="d_txt_1" type="text" maxlength="5" id="d_txt_1" class="form-control" autocomplete="off" placeholder="" readonly="" style="text-align:right;"></td>
+                        <td rowspan="2" style="padding:5px; background-color: rgb(171, 170, 170); border-radius: 10px;">Fuel in litres as used in personal vehicle. In case of car pool, divide total fuel volume by total number of people.  All people in the car pool need to account for the divided fuel volume.</td>
+                    </tr>
+                    <tr>
+                        <td>Diesel fuel (litres)</td>
+                        <td><input name="txt_2" type="text" maxlength="5" id="txt_2" class="form-control" autocomplete="off" placeholder="" onblur="javascript:calculate_total(2);" style="text-align:right;"></td>
+                        <td><input name="d_txt_2" type="text" maxlength="5" id="d_txt_2" class="form-control" autocomplete="off" placeholder="" readonly="" style="text-align:right;"></td>
+                    </tr>
+                    <tr>
+                        <td>Auto LPG (kg)</td>
+                        <td><input name="txt_3" type="text" maxlength="5" id="txt_3" class="form-control" autocomplete="off" placeholder="" onblur="javascript:calculate_total(3);" style="text-align:right;"></td>
+                        <td><input name="d_txt_3" type="text" maxlength="5" id="d_txt_3" class="form-control" autocomplete="off" placeholder="" readonly="" style="text-align:right;"></td>
+                        <td style="padding:5px; " >If you use a car that uses LPG as the fuel.</td>                    
+                    </tr>
+                    <tr>
+                        <td>Taxis (km)</td>
+                        <td><input name="txt_4" type="text" maxlength="5" id="txt_4" class="form-control" autocomplete="off" placeholder="" onblur="javascript:calculate_total(4);" style="text-align:right;"></td>
+                        <td><input name="d_txt_4" type="text" maxlength="5" id="d_txt_4" class="form-control" autocomplete="off" placeholder="" readonly="" style="text-align:right;"></td>
+                        <td rowspan="4" style="padding:5px; background-color: rgb(171, 170, 170); border-radius: 10px;">For these modes of Public Transport, fill in approximate distance used.</td>
+                    </tr>
+                    <tr>
+                        <td>Local bus (BEST / Company Bus) (km)</td>
+                        <td><input name="txt_5" type="text" maxlength="5" id="txt_5" class="form-control" autocomplete="off" placeholder="" onblur="javascript:calculate_total(5);" style="text-align:right;"></td>
+                        <td><input name="d_txt_5" type="text" maxlength="5" id="d_txt_5" class="form-control" autocomplete="off" placeholder="" readonly="" style="text-align:right;"></td>
+                    </tr>
+                    <tr>
+                        <td>Autorickshaw (km)</td>
+                        <td><input name="txt_6" type="text" maxlength="5" id="txt_6" class="form-control" autocomplete="off" placeholder="" onblur="javascript:calculate_total(6);" style="text-align:right;"></td>
+                        <td><input name="d_txt_6" type="text" maxlength="5" id="d_txt_6" class="form-control" autocomplete="off" placeholder="" readonly="" style="text-align:right;"></td>
+                    </tr>
+                    <tr>
+                        <td>Local train (km)</td>
+                        <td><input name="txt_7" type="text" maxlength="5" id="txt_7" class="form-control" autocomplete="off" placeholder="" onblur="javascript:calculate_total(7);" style="text-align:right;"></td>
+                        <td><input name="d_txt_7" type="text" maxlength="5" id="d_txt_7" class="form-control" autocomplete="off" placeholder="" readonly="" style="text-align:right;"></td>
+                    </tr> 
+                    <tr>
+                        <td colspan="4" style="text-align:left;"><strong>Domestic Use</strong></td>
+                    </tr> 
+                    <tr>
+                        <td>Number of LPG Cylinders Used for cooking</td>
+                        <td><input name="txt_8" type="text" maxlength="5" id="txt_8" class="form-control" autocomplete="off" placeholder="" onblur="javascript:calculate_total(8);" style="text-align:right;"></td>
+                        <td><input name="d_txt_8" type="text" maxlength="5" id="d_txt_8" class="form-control" autocomplete="off" placeholder="" readonly="" style="text-align:right;"></td>
+                        <td rowspan="3" style="padding:5px;">These reflect your residential consumption. You should get these values from keeping track of the LPG cylinders and from your CNG and electric bills.</td>
+                    </tr> 
+                    <tr>
+                        <td>Amount of CNG used at home (m3)</td>
+                        <td><input name="txt_9" type="text" maxlength="5" id="txt_9" class="form-control" autocomplete="off" placeholder="" onblur="javascript:calculate_total(9);" style="text-align:right;"></td>
+                        <td><input name="d_txt_9" type="text" maxlength="5" id="d_txt_9" class="form-control" autocomplete="off" placeholder="" readonly="" style="text-align:right;"></td>
+                    </tr> 
+                    <tr>
+                        <td>Electricity used in a month (kWh)</td>
+                        <td><input name="txt_10" type="text" maxlength="5" id="txt_10" class="form-control" autocomplete="off" placeholder="" onblur="javascript:calculate_total(10);" style="text-align:right;"></td>
+                        <td><input name="d_txt_10" type="text" maxlength="5" id="d_txt_10" class="form-control" autocomplete="off" placeholder="" readonly="" style="text-align:right;"></td>
+                    </tr> 
+                    <tr>
+                        <td>MY Total emissions per Month (kg CO2/Month)</td>
+                        <td></td>
+                        <td><input name="txtmonthtotal" type="text" maxlength="5" id="txtmonthtotal" class="form-control" autocomplete="off" placeholder="" readonly="" style="text-align:right;"></td>
+                        <td></td>
+                    </tr> 
+                    <tr>
+                        <td>MY AVG. ANNUAL Carbon Footprint (Tons of CO2)</td>
+                        <td></td>
+                        <td><input name="txtyeartotal" type="text" maxlength="5" id="txtyeartotal" class="form-control" autocomplete="off" placeholder="" readonly="" style="text-align:right;"></td>
+                        <td style="padding:5px; background-color: rgb(171, 170, 170); border-radius: 10px;">This figure is based on this month's usage.</td>
+                    </tr> 
+                </tbody>
+            </table>
+        </div>
+        <div class="gap30"></div>
+        <div class="gap30"></div>
+        <div class="container row">
+            <div class="col-md-12 total vertical-center">
+                <div class="col-md-7">
+                    <div class="col-md-12 fp-total-annual-text">Your total annual emissions</div>
+                    <div class="col-md-12 fp-total-annual-bar fp-bar" id="your" style="width: 0%; border-radius: 10px;"></div>
+                </div>
+                <div class="col-md-5 fp-total-annual-value"><span id="numberoftonnes"></span> tonnes of CO<sub>2</sub></div>
+            </div>
+            <div class="col-md-12 country vertical-center">
+                <div class="col-md-7">
+                    <div class="col-md-12 fp-total-average-text">India Country average</div>
+                    <div class="col-md-12 fp-total-average-bar fp-bar" style="width: 36.8421%; border-radius: 10px;"></div>
+                </div>
+                <div class="col-md-5 fp-total-average-value"><span>6.92 </span>tonnes of CO<sub>2</sub></div>
+            </div>
+            <div class="col-md-12 world vertical-center ">
+                <div class="col-md-7">
+                    <div class="col-md-12 fp-total-average-text">World average</div>
+                    <div class="col-md-12 fp-total-average-bar fp-bar" style="width: 100%; border-radius: 10px;"></div>
+                </div>
+                <div class="col-md-5 fp-total-average-value"><span>18.68 </span>tonnes of CO<sub>2</sub></div>
+            </div>
+            <div class="gap30"></div>
+            <div class="container"> 
+                <p>To reduce your environmental impact Start with these <a href="https://www.un.org/en/actnow/ten-actions">Ten Actions</a> !. </p>
+                <p>Want To Offset your Emissions? Thats Amazing! <br> Head to <a href="https://offset.climateneutralnow.org/howtooffset">The UN Carbon Offset Platform</a> to find out more on how.</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</body>
+</html>
